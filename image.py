@@ -84,7 +84,7 @@ class Image(Video):
         frame = cv2.imread(os.path.join(self.ASCII_IMAGE_DIRECTORY, images[0]))
         height, width, layers = frame.shape
         video_name = 'final.mp4'
-        cv2.VideoWriter_fourcc(*'MP4V')
+        _fourcc = cv2.VideoWriter_fourcc(*'MP4V')
         video = cv2.VideoWriter(video_name, 0x7634706d, self.FPS, (width, height))
         for image in images:
             video.write(cv2.imread(os.path.join(self.ASCII_IMAGE_DIRECTORY, image)))
